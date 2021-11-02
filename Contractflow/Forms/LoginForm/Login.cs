@@ -38,7 +38,8 @@ namespace Contractflow
 
         private void forgotPasswordLabel_Click(object sender, EventArgs e)
         {
-            new RecoverPassword();
+            RecoverPassword recoverPasswordForm = new RecoverPassword();
+            recoverPasswordForm.Show();
         }
     }
 }

@@ -22,7 +22,7 @@ namespace Contractflow.Forms.ForgotPassword
 
         private void cancelRecoverPasswordBtn_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
     }
 }
