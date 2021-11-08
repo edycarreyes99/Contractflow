@@ -18,6 +18,11 @@ namespace Contractflow
             emailTxtInput.Focus();
         }
 
+        private void Login_Shown(object sender, EventArgs e)
+        {
+            emailTxtInput.Focus();
+        }
+
         // Method to paint the custom gradient in the leftSidePanel
         private void leftSidePanel_Paint(object sender, PaintEventArgs e)
         {
@@ -97,11 +102,6 @@ namespace Contractflow
             {
                 DoLogin();
             }
-        }
-
-        private void Login_Shown(object sender, EventArgs e)
-        {
-            emailTxtInput.Focus();
         }
     }
 }
