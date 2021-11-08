@@ -164,6 +164,7 @@ namespace Contractflow
             this.loginBtn.TabIndex = 5;
             this.loginBtn.Text = "Iniciar Sesión";
             this.loginBtn.UseVisualStyleBackColor = false;
+            this.loginBtn.Click += new System.EventHandler(this.loginBtn_Click);
             // 
             // passwordLabel
             // 

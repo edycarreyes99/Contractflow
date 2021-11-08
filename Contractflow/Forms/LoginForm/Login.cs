@@ -1,4 +1,5 @@
 ﻿using Contractflow.Forms.ForgotPassword;
+using Contractflow.Services;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,9 +12,11 @@ namespace Contractflow
 {
     public partial class Login : Form
     {
+        AuthService authService;
         public Login()
         {
             InitializeComponent();
+            authService = new AuthService();
         }
 
         // Method to paint the custom gradient in the leftSidePanel
@@ -40,6 +43,35 @@ namespace Contractflow
         {
             RecoverPassword recoverPasswordForm = new RecoverPassword();
             recoverPasswordForm.Show();
+        }
+
+        private async void loginBtn_Click(object sender, EventArgs e)
+        {
+            if (ValidateInputs())
+            {
+                if(await authService.Login(emailTxtInput.Text, passwordTxtInput.Text))
+                {
+                    
+                }
+            }
+        }
+
+        private bool ValidateInputs()
+        {
+            emailTxtInput.Text = emailTxtInput.Text.ToString().Trim();
+            passwordTxtInput.Text = passwordTxtInput.Text.ToString().Trim();
+            if(emailTxtInput.Text == string.Empty || passwordTxtInput.Text == string.Empty)
+            {
+                MessageBox.Show(
+                    "Algunos de los campos requeridos están vacíos o no son válidos.", 
+                    "Error al iniciar sesión" ,
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                    );
+                return false;
+            }
+
+            return true;
         }
     }
 }
