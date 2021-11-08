@@ -47,11 +47,16 @@ namespace Contractflow
 
         private async void loginBtn_Click(object sender, EventArgs e)
         {
+            DoLogin();
+        }
+
+        private async void DoLogin()
+        {
             if (ValidateInputs())
             {
-                if(await authService.Login(emailTxtInput.Text, passwordTxtInput.Text))
+                if (await authService.Login(emailTxtInput.Text, passwordTxtInput.Text))
                 {
-                    
+
                 }
             }
         }
@@ -72,6 +77,22 @@ namespace Contractflow
             }
 
             return true;
+        }
+
+        private void emailTxtInput_KeyUp(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+                DoLogin();
+            }
+        }
+
+        private void passwordTxtInput_KeyUp(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+                DoLogin();
+            }
         }
     }
 }

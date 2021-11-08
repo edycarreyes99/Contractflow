@@ -143,6 +143,7 @@ namespace Contractflow
             this.passwordTxtInput.Size = new System.Drawing.Size(263, 24);
             this.passwordTxtInput.TabIndex = 7;
             this.passwordTxtInput.UseSystemPasswordChar = true;
+            this.passwordTxtInput.KeyUp += new System.Windows.Forms.KeyEventHandler(this.passwordTxtInput_KeyUp);
             // 
             // emailTxtInput
             // 
@@ -152,6 +153,7 @@ namespace Contractflow
             this.emailTxtInput.Name = "emailTxtInput";
             this.emailTxtInput.Size = new System.Drawing.Size(263, 24);
             this.emailTxtInput.TabIndex = 6;
+            this.emailTxtInput.KeyUp += new System.Windows.Forms.KeyEventHandler(this.emailTxtInput_KeyUp);
             // 
             // loginBtn
             // 

@@ -70,7 +70,7 @@ namespace Contractflow.Services
                             );
                         return false;
 
-                    default:
+                    case AuthConstants.LOGIN_SUCCESS:
                         MessageBox.Show(
                             "¡Bienvenido al sistema!.",
                             "Inicio de sesión correcto",
@@ -78,6 +78,8 @@ namespace Contractflow.Services
                             MessageBoxIcon.Information
                         );
                         return true;
+                    default:
+                        return false;
                 }
             }
             catch (Exception e)
