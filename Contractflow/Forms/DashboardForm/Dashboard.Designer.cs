@@ -1,5 +1,5 @@
 ﻿
-namespace Contractflow.Forms.Dashboard
+namespace Contractflow.Forms.DashboardForm
 {
     partial class Dashboard
     {

@@ -6,7 +6,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 
-namespace Contractflow.Forms.Dashboard
+namespace Contractflow.Forms.DashboardForm
 {
     public partial class Dashboard : Form
     {
