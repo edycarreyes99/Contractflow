@@ -241,6 +241,7 @@ namespace Contractflow
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Contractflow";
+            this.Shown += new System.EventHandler(this.Login_Shown);
             this.leftSidePanel.ResumeLayout(false);
             this.leftSidePanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logoImg)).EndInit();

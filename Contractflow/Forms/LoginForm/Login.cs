@@ -1,9 +1,7 @@
-﻿using Contractflow.Forms.ForgotPassword;
+﻿using Contractflow.Forms.DashboardForm;
+using Contractflow.Forms.ForgotPassword;
 using Contractflow.Services;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Windows.Forms;
@@ -17,6 +15,7 @@ namespace Contractflow
         {
             InitializeComponent();
             authService = new AuthService();
+            emailTxtInput.Focus();
         }
 
         // Method to paint the custom gradient in the leftSidePanel
@@ -45,7 +44,7 @@ namespace Contractflow
             recoverPasswordForm.Show();
         }
 
-        private async void loginBtn_Click(object sender, EventArgs e)
+        private void loginBtn_Click(object sender, EventArgs e)
         {
             DoLogin();
         }
@@ -56,7 +55,12 @@ namespace Contractflow
             {
                 if (await authService.Login(emailTxtInput.Text, passwordTxtInput.Text))
                 {
-
+                    Hide();
+                    using (Dashboard dashboardForm = new Dashboard())
+                    {
+                        dashboardForm.ShowDialog();
+                    }
+                    Close();
                 }
             }
         }
@@ -93,6 +97,11 @@ namespace Contractflow
             {
                 DoLogin();
             }
+        }
+
+        private void Login_Shown(object sender, EventArgs e)
+        {
+            emailTxtInput.Focus();
         }
     }
 }
